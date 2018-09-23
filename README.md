@@ -29,7 +29,9 @@ Following along the youtube [video](https://www.youtube.com/watch?v=w6KCDFssHFA)
 
 - `dom-testing-library`: more utils for DOM testing. Point of this is to focus the testing on the features instead of implementation details. That makes the tests more resilient to implementation changes, while still being useful to determine if the component is behaving correctly. `getQueriesForElement` creates function references for the given element, so I've used a helper called `getByLabelText` which finds an `input` element connected to a label with the given text. Good outtake: maybe I18N library can help you selecting a text value by i18n key instead.
 
-- `react-testing-library`: looks much faster since we're running Virtual DOM instead of real DOM. Provides similar utilities as `dom-testing-library`, but specific for React.
+- `react-testing-library`: looks much faster since we're running Virtual DOM instead of real DOM. Provides similar utilities as `dom-testing-library`, but specific for React. After each test we should do a cleanup, to make sure that the rendered component does not stay in DOM (test isolation). We can do it by manually calling `unmount` (returned from `render` call) at the end of each test (stupid), or just calling the function `cleanup` (imported from `react-testing-library`) in the `afterEach` hook. That is nice and explicit, but Kent then shows some magic by doing that kind of stuff automagically which is not cool since you have more to read & learn & keep in head while working with tests. Adding some helpers in each file as needed is not too troublesome.
+
+- `state`: Kent prefers using `fireEvent` instead of `Simulate`. Point is to use real DOM events instead of synthetic ones. Helps to get through mumbo jumbo surrounding the way React handles the events. Using `debug` function returned from `render` call can help by printing out the current state of the whole container or just the element passed as argument. Label with the error message has to be searched for only after using the `change` event, since it does not exist before and `getByTestId` call will fail.
 
 ## Pre-requisites:
 

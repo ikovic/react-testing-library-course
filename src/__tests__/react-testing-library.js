@@ -1,15 +1,14 @@
 import 'jest-dom/extend-expect'
 import React from 'react'
 // 🐨 you'll need to import the render function from 'react-testing-library'
-import {render} from 'react-testing-library'
+import {render, cleanup} from 'react-testing-library'
 import {FavoriteNumber} from '../favorite-number'
 
+afterEach(cleanup)
+
 test('renders a number input with a label "Favorite Number"', () => {
-  // 🐨 remove this div (render will make one for you)
-  const div = document.createElement('div')
-  // 🐨 remove this ReactDOM.render call and use render from react-testing-library instead.
   // 📖 read docs here: https://github.com/kentcdodds/react-testing-library/blob/master/README.md#render
-  const {getByLabelText} = render(<FavoriteNumber />, div)
+  const {getByLabelText} = render(<FavoriteNumber />)
   const input = getByLabelText(/favorite number/i)
   expect(input).toHaveAttribute('type', 'number')
 })
