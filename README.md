@@ -23,7 +23,11 @@ It's going to be fantastic.
 
 Following along the youtube [video](https://www.youtube.com/watch?v=w6KCDFssHFA). I'll comment in the order of the exercises as in the linked video.
 
-- `react-dom.js`: render a component to DOM in memory and then use DOM API to find and query the elements for required values. Things I learned: Element is a specialized Node, which is actually a global interface for all possible elements in a DOM tree
+- `react-dom`: render a component to DOM in memory and then use DOM API to find and query the elements for required values. Things I learned: Element is a specialized Node, which is actually a global interface for all possible elements in a DOM tree
+
+- `jest-dom`: makes DOM testing simpler, adds helper methods used to search for certain attribute value or text content of an element
+
+- `dom-testing-library`: more utils for DOM testing. Point of this is to focus the testing on the features instead of implementation details. That makes the tests more resilient to implementation changes, while still being useful to determine if the component is behaving correctly. `getQueriesForElement` creates function references for the given element, so I've used a helper called `getByLabelText` which finds an `input` element connected to a label with the given text.
 
 ## Pre-requisites:
 
