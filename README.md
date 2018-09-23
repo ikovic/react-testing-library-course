@@ -5,6 +5,12 @@ _Course material for testing React components using react-testing-library_
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
+- [My Comments](#my-comments)
+- [Pre-requisites:](#pre-requisites)
+- [System Requirements:](#system-requirements)
+- [Setup:](#setup)
+- [License](#license)
+
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 <small>I'm still working on the README... sorry...</small>
@@ -12,6 +18,12 @@ _Course material for testing React components using react-testing-library_
 We're going to be learning how to write tests with React and
 [react-testing-library](https://github.com/kentcdodds/react-testing-library).
 It's going to be fantastic.
+
+## My Comments
+
+Following along the youtube [video](https://www.youtube.com/watch?v=w6KCDFssHFA). I'll comment in the order of the exercises as in the linked video.
+
+- `react-dom.js`: render a component to DOM in memory and then use DOM API to find and query the elements for required values. Things I learned: Element is a specialized Node, which is actually a global interface for all possible elements in a DOM tree
 
 ## Pre-requisites:
 
