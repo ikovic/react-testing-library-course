@@ -3,14 +3,14 @@ import 'jest-dom/extend-expect'
 import 'react-testing-library/cleanup-after-each'
 
 // 0⃣ 🐨 you're gonna need these
-// import React from 'react'
-// import {render} from 'react-testing-library'
-// import {Countdown} from '../countdown'
+import React from 'react'
+import {render} from 'react-testing-library'
+import {Countdown} from '../countdown'
 
 // because we're doing a time-based thing in our component, we need to force
 // time in our tests to pass by a determanistic amount.
 // 3⃣ 🐨 Use the `jest.useFakeTimers` API:
-// jest.useFakeTimers() // 💯
+jest.useFakeTimers() // 💯
 // 📖 https://jestjs.io/docs/en/timer-mocks.html
 
 // we need to spy on console.error so we can assert that it's not called
@@ -20,6 +20,14 @@ import 'react-testing-library/cleanup-after-each'
 // 📖 https://jestjs.io/docs/en/jest-object#jestspyonobject-methodname
 // 6⃣ 🐨 after each test, use `mockRestore` to cleanup after yourself.
 // 📖 https://jestjs.io/docs/en/mock-function-api#mockfnmockrestore
+
+beforeEach(() => {
+  jest.spyOn(console, 'error').mockImplementation(() => {})
+})
+
+afterEach(() => {
+  console.error.mockRestore()
+})
 
 test('does not attempt to set state when unmounted (to prevent memory leaks)', () => {
   // 1⃣ 🐨 render the countdown
@@ -33,6 +41,10 @@ test('does not attempt to set state when unmounted (to prevent memory leaks)', (
   // 7⃣ 🐨 Make an assertion that console.error was not called
   // (then, you can test that it worked by removing the componentWillUnMount in
   // the countdown component)
+  const {unmount} = render(<Countdown />)
+  unmount()
+  jest.runOnlyPendingTimers()
+  expect(console.error).not.toHaveBeenCalled()
 })
 
 //////// Elaboration & Feedback /////////

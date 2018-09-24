@@ -37,6 +37,8 @@ Following along the youtube [video](https://www.youtube.com/watch?v=w6KCDFssHFA)
 
 - `portals`: nothing special, seems easier than with Enzyme (Kent is gloating)
 
+- `unmounting`: learned about timer mocks in JS, which give you deterministic control over time in tests, instead of relying on real time. Also learned about spies, which watch over object method calls
+
 ## Pre-requisites:
 
 You should be familiar with modern JavaScript and writing React applications.
