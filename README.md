@@ -47,6 +47,8 @@ Following along the youtube [video](https://www.youtube.com/watch?v=w6KCDFssHFA)
 
 - `a11ly`: there is a module called `jest-axe` which can help us in testing apps for a11ly problems. You cannot automate it completely, but it's better than nothing - someone should test this with an actual device.
 
+- `react-router`: we render a component we want to test wrapped with a Router. No mocking required. We then test for the presence of text nodes we expect to be on the page. Not sure about code splitting and async stuff - it's shown that we do a test click on navigation and immediately test for presence of a heading characteristic for the linked page. Will it load in time? We can extract a special render function which will always render the component within Router.
+
 ## Pre-requisites:
 
 You should be familiar with modern JavaScript and writing React applications.
