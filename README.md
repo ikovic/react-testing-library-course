@@ -39,6 +39,8 @@ Following along the youtube [video](https://www.youtube.com/watch?v=w6KCDFssHFA)
 
 - `unmounting`: learned about timer mocks in JS, which give you deterministic control over time in tests, instead of relying on real time. Also learned about spies, which watch over object method calls
 
+- `mock-component`: Example uses an external component which in turn renders the provided children. Problem is that the used component waits a second before removing the element from DOM, so we'll mock it to make tests run fast and not depend on implementation details. Used `jest.mock`, takes import name + implementation. You just return the mock object, with the implementation you provided yourself.
+
 ## Pre-requisites:
 
 You should be familiar with modern JavaScript and writing React applications.
