@@ -35,7 +35,7 @@ Following along the youtube [video](https://www.youtube.com/watch?v=w6KCDFssHFA)
 
 - `prop-updates`: used if there is a need to compare between the render before and after a prop changes. `rerender` is returned from the first render.
 
-- ``
+- `portals`: nothing special, seems easier than with Enzyme (Kent is gloating)
 
 ## Pre-requisites:
 
