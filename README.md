@@ -43,6 +43,10 @@ Following along the youtube [video](https://www.youtube.com/watch?v=w6KCDFssHFA)
 
 - `http-jest-mocks`: a component makes an API call by using an imported module. To test it, we need to mock that module. This actually shows how to mock the user implemented modules, instead of the ones from `node_modules`. One thing I failed to understand at first: there is no need to keep variables to track spies, we can just import the same module we're mocking, you'll always get the mocked one.
 
+- `dependency-injection`: what to do outside of Jest context? We use DI to inject dependencies instead of mocking them. This is really trivial and dissapointing, since I've expected more than just passing the `loadGreeting` through props.
+
+- `a11ly`: there is a module called `jest-axe` which can help us in testing apps for a11ly problems. You cannot automate it completely, but it's better than nothing - someone should test this with an actual device.
+
 ## Pre-requisites:
 
 You should be familiar with modern JavaScript and writing React applications.
