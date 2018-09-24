@@ -33,6 +33,10 @@ Following along the youtube [video](https://www.youtube.com/watch?v=w6KCDFssHFA)
 
 - `state`: Kent prefers using `fireEvent` instead of `Simulate`. Point is to use real DOM events instead of synthetic ones. Helps to get through mumbo jumbo surrounding the way React handles the events. Using `debug` function returned from `render` call can help by printing out the current state of the whole container or just the element passed as argument. Label with the error message has to be searched for only after using the `change` event, since it does not exist before and `getByTestId` call will fail.
 
+- `prop-updates`: used if there is a need to compare between the render before and after a prop changes. `rerender` is returned from the first render.
+
+- ``
+
 ## Pre-requisites:
 
 You should be familiar with modern JavaScript and writing React applications.
